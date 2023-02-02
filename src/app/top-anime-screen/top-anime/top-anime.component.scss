@@ -1,0 +1,21 @@
+.hidden-scroll-list {
+    height: 90%;
+    overflow-y: scroll;
+    padding: 0 30px;
+}
+
+.hidden-scroll-list::-webkit-scrollbar {
+    display: none;
+}
+
+.top-anime-title {
+    height: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+    padding-left: 30px;
+}
+
+.anime-item {
+    text-align: center;
+}

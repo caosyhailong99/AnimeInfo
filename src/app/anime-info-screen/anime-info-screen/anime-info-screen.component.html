@@ -1,0 +1,32 @@
+<!-- Button trigger modal -->
+<div class="scrollable">
+    <button *ngIf="trailerImage" (mouseleave)="onLeavePlayButton()" (mouseover)="onHoverPlayButton()"
+        (click)="onClickOpen()" type="button" class="trailer-btn">
+        <div class="overlay"></div>
+        <img class="play-button" src="../assets/icons/play-button.svg">
+        <img width="100%" height="400px" [src]="trailerImage">
+    </button>
+    <div class="description-bar">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="desc-bar-item">Score: {{score}}</div>
+            <div class="desc-bar-item">Rating: {{rating}}</div>
+            <div class="desc-bar-item">Rank: {{rank}}</div>
+        </div>
+    </div>
+    <div class="description-content">
+        <img class="poster" src={{posterImage}}>
+        <div class="anime-description">
+            <p class="title">{{title}}</p>
+            <p class="normal-text">Genres: {{genres}}</p>
+            <p class="normal-text">Studio: {{studios}}</p>
+            <p class="normal-text">Release date: {{releaseDate}}</p>
+            <p class="normal-text">Status: {{status}}</p>
+            <p class="normal-text">Episodes: {{episodes}}</p>
+            <p class="normal-text">Duration: {{duration}}</p>
+        </div>
+        <p class="title">Summary:</p>
+        <div class="summary">
+            <p class="normal-text">{{synopsis}}</p>
+        </div>
+    </div>
+</div>
