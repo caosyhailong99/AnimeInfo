@@ -1,13 +1,16 @@
 <div class="container-fluid vh-100 fixed-top">
     <header class="row">
-        <div class="col-xl-2 col-none justify-content-center page-title">
+        <div class="d-none d-xl-inline col-xl-2 justify-content-center page-title">
             Anime info
-            <span class="material-symbols-outlined menu-button">menu</span>
+        </div>
+        <div class="d-inline d-xl-none col-122 justify-content-center page-title">
+            Anime info
+            <span class="material-symbols-outlined menu-button" (click)="onClickSideMenu()">menu</span>
         </div>
         <input class="col-12 col-xl-10 search-bar" type="text" id="search" placeholder="Enter your anime, manga,..." />
     </header>
     <div class="row vh-100 main-section">
-        <div class="col-12 d-none side-menu">
+        <div class="d-xl-none col-12 horizontal-side-menu">
             <div class="side-nav">
                 <p>Main</p>
                 <a (click)="setIndex(1)" [ngClass]="{'selected-side-nav-item': selectedIndex == 1}">Genres</a>
@@ -17,7 +20,7 @@
                 <a (click)="setIndex(5)" [ngClass]="{'selected-side-nav-item': selectedIndex == 5}">New Releases</a>
             </div>
         </div>
-        <div class="col-2 d-none d-xl-block side-menu">
+        <div class="d-none d-xl-block col-2 side-menu">
             <div class="side-nav">
                 <p>Main</p>
                 <a (click)="setIndex(1)" [ngClass]="{'selected-side-nav-item': selectedIndex == 1}">Genres</a>

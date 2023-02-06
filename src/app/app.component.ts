@@ -29,4 +29,13 @@ export class AppComponent {
     let video = document.getElementById('trailer-video') as HTMLIFrameElement || new HTMLIFrameElement();
     video.contentWindow?.postMessage('{"event":"command", "func":"stopVideo", "args":""}', '*');
   }
+
+  onClickSideMenu() {
+    let menu = document.querySelector(".horizontal-side-menu") as HTMLElement;
+    let currentDisplay = menu.style.display;
+    if(currentDisplay === "none")
+      menu.style.display = "block";
+    else
+      menu.style.display = "none";
+  }
 }
