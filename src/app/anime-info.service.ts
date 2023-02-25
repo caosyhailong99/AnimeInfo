@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { API_URL, GET_TOP_ANIME_URL, GET_ANIME } from './constants/ConstantApi';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { API_URL, GET_TOP_ANIME_URL, GET_ANIME_URL, GET_SEARCH_ANIME_URL } from './constants/ConstantApi';
 import { AnimeInfo } from './models/AnimeInfo';
 
 @Injectable({
@@ -15,6 +15,14 @@ export class AnimeInfoService {
   }
 
   getAnimeById(id: string) {
-    return this.http.get(API_URL + GET_ANIME + `/${id}`);
+    return this.http.get(API_URL + GET_ANIME_URL + `/${id}`);
+  }
+
+  getSearchedAnime(id: string) {
+    id = id.trim();
+    const options = id ? {
+      params: new HttpParams().set("q", id)
+    } : {};
+    return this.http.get(GET_SEARCH_ANIME_URL, options);
   }
 }

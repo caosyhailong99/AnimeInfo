@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-anime-info-website';
   selectedIndex = 0;
+  searchName = new FormControl('');
   constructor(
+    private router: Router,
   ) { }
 
   ngAfterViewInit() {
@@ -37,5 +41,10 @@ export class AppComponent {
       menu.style.display = "block";
     else
       menu.style.display = "none";
+  }
+
+  onPressedEnter() {
+    console.log("OK");
+    this.router.navigate(["/searched-anime-screen"], {queryParams: {'name': this.searchName.value}});
   }
 }

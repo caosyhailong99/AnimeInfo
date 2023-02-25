@@ -7,7 +7,7 @@
             Anime info
             <span class="material-symbols-outlined menu-button" (click)="onClickSideMenu()">menu</span>
         </div>
-        <input class="col-12 col-xl-10 search-bar" type="text" id="search" placeholder="Enter your anime, manga,..." />
+        <input class="col-12 col-xl-10 search-bar" type="text" id="search" autocomplete="off" placeholder="Enter your anime, manga,..." [formControl]="searchName" (keydown.enter)="onPressedEnter()" />
     </header>
     <div class="row vh-100 main-section">
         <div class="d-xl-none col-12 horizontal-side-menu">

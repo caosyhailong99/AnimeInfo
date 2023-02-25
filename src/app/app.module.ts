@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { AnimeInfoScreenComponent } from './anime-info-screen/anime-info-screen/anime-info-screen.component';
 import { TopAnimeComponent } from './top-anime-screen/top-anime/top-anime.component';
 import { AnimeItemComponent } from './components/anime-item/anime-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchedAnimeScreenComponent } from './components/searched-anime-screen/searched-anime-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeInfoScreenComponent,
     TopAnimeComponent,
-    AnimeItemComponent
+    AnimeItemComponent,
+    SearchedAnimeScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
