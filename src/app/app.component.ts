@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'my-anime-info-website';
   selectedIndex = 0;
-  searchName = new FormControl('');
+  searchName = new UntypedFormControl('');
   constructor(
     private router: Router,
   ) { }
