@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchedAnimeScreenComponent } from './searched-anime-screen.component';
+import { SearchedAnimeScreenComponent } from './searched-anime.component';
 
 describe('SearchedAnimeScreenComponent', () => {
   let component: SearchedAnimeScreenComponent;

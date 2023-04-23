@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AnimeInfoService } from 'src/app/anime-info.service';
-import { AnimeGenre } from 'src/app/models/AnimeGenre';
-import { AnimeImage } from 'src/app/models/AnimeImage';
-import { AnimeImageUrl } from 'src/app/models/AnimeImageUrl';
-import { AnimeInfo } from 'src/app/models/AnimeInfo';
+
+import { AnimeGenre } from 'src/app/core/models/AnimeGenre';
+import { AnimeImage } from 'src/app/core/models/AnimeImage';
+import { AnimeImageUrl } from 'src/app/core/models/AnimeImageUrl';
+import { AnimeInfo } from 'src/app/core/models/AnimeInfo';
+import { AnimeInfoService } from 'src/app/core/services/anime-info.service';
 
 @Component({
   selector: 'app-top-anime',
@@ -37,7 +38,7 @@ export class TopAnimeComponent implements OnInit {
           }
           this.topAnimeList.push(new AnimeInfo(item.mal_id as number, item.title as string, animeImage, animeGenres));
         }
-        // this.topAnimeList = <AnimeInfo[]>data.data;
+        console.log(this.topAnimeList);
       },
       error(err) {
         console.log(`Oh boy, there's an error: ${err}`);
@@ -49,6 +50,6 @@ export class TopAnimeComponent implements OnInit {
   }
 
   onClickAnime(animeId: number) {
-    this.router.navigate(["anime-info-screen"], {queryParams: {id: animeId}});
+    this.router.navigate(["anime-info"], {queryParams: {id: animeId}});
   }
 }

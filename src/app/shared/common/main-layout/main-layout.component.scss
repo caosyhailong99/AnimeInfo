@@ -1,0 +1,132 @@
+$white: rgb(234, 234, 234);
+$light_grey: rgb(139, 139, 139);
+$dark_grey: rgb(63, 63, 63);
+$darker_grey: rgb(46, 46, 46);
+$light_red: rgb(190, 55, 55);
+
+.side-menu, .horizontal-side-menu {
+    background-color: $dark_grey;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.horizontal-side-menu {
+    display: none;
+}
+
+.main-page {
+    height: 100%;
+    background-color: $darker_grey;
+    border: solid 1px $dark_grey;
+    padding: 0;
+}
+
+.page-title {
+    position: relative;
+    font-family: 'PaytoneOne-Regular';
+    font-size: 28px;
+    background-color: $light_red;
+    color: white;
+}
+
+.side-nav {
+    p {
+        margin-left: 10px;
+        margin-top: 30px;
+        color: rgb(185, 185, 185);
+    }
+}
+
+.side-nav {
+    a {
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.side-nav {
+    a:active {
+        border-left: 4px solid red;
+        box-shadow: inset 7px 0px 6px -6px red;
+        transition: 0.1s;
+    }
+    a:hover {
+        border-left: 4px solid red;
+        box-shadow: inset 7px 0px 6px -6px red;
+        transition: 0.1s;
+    }
+}
+
+.selected-side-nav-item {
+    border-left: 4px solid red;
+    box-shadow: inset 7px 0px 6px -6px red;
+}
+
+.search-bar {
+    border: none;
+    background-color: $darker_grey;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(0.25turn, rgba(190, 55, 55, 0.132), $light_red, rgba(190, 55, 55, 0.132));
+    border-image-slice: 1;
+    color: white;
+}
+
+.main-section {
+    clear: both;
+}
+
+.container-fluid {
+    z-index: -1;
+}
+
+.my-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+}
+
+.my-modal-content {
+    width: 60%;
+    height: 70%;
+    margin: 5% auto;
+}
+
+.close-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 79.3%;
+    top: 8%;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-button {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+    border-radius: 5px;
+    text-align: center;
+    border: solid 2px white;
+    cursor: pointer;
+}

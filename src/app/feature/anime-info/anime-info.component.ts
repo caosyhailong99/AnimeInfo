@@ -1,17 +1,18 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AnimeInfoService } from 'src/app/anime-info.service';
-import { AnimeGenre } from 'src/app/models/AnimeGenre';
-import { AnimeImage } from 'src/app/models/AnimeImage';
-import { AnimeImageUrl } from 'src/app/models/AnimeImageUrl';
-import { AnimeInfo } from 'src/app/models/AnimeInfo';
-import { AnimeStudio } from 'src/app/models/AnimeStudio';
-import { AnimeTrailer } from 'src/app/models/AnimeTrailer';
+
+import { AnimeGenre } from 'src/app/core/models/AnimeGenre';
+import { AnimeImage } from 'src/app/core/models/AnimeImage';
+import { AnimeImageUrl } from 'src/app/core/models/AnimeImageUrl';
+import { AnimeInfo } from 'src/app/core/models/AnimeInfo';
+import { AnimeStudio } from 'src/app/core/models/AnimeStudio';
+import { AnimeTrailer } from 'src/app/core/models/AnimeTrailer';
+import { AnimeInfoService } from 'src/app/core/services/anime-info.service';
 
 @Component({
-  selector: 'app-anime-info-screen',
-  templateUrl: './anime-info-screen.component.html',
-  styleUrls: ['./anime-info-screen.component.scss']
+  selector: 'app-anime-info',
+  templateUrl: './anime-info.component.html',
+  styleUrls: ['./anime-info.component.scss']
 })
 export class AnimeInfoScreenComponent implements OnInit {
   animeInfo!: AnimeInfo;

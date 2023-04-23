@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AnimeGenre } from 'src/app/models/AnimeGenre';
+import { AnimeGenre } from 'src/app/core/models/AnimeGenre';
 
 @Component({
   selector: 'app-anime-item',

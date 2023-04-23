@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AnimeInfoService } from 'src/app/anime-info.service';
-import { AnimeGenre } from 'src/app/models/AnimeGenre';
-import { AnimeImage } from 'src/app/models/AnimeImage';
-import { AnimeImageUrl } from 'src/app/models/AnimeImageUrl';
-import { AnimeInfo } from 'src/app/models/AnimeInfo';
+
+import { AnimeGenre } from 'src/app/core/models/AnimeGenre';
+import { AnimeImage } from 'src/app/core/models/AnimeImage';
+import { AnimeImageUrl } from 'src/app/core/models/AnimeImageUrl';
+import { AnimeInfo } from 'src/app/core/models/AnimeInfo';
+import { AnimeInfoService } from 'src/app/core/services/anime-info.service';
 
 @Component({
-  selector: 'app-searched-anime-screen',
-  templateUrl: './searched-anime-screen.component.html',
-  styleUrls: ['./searched-anime-screen.component.scss']
+  selector: 'app-searched-anime',
+  templateUrl: './searched-anime.component.html',
+  styleUrls: ['./searched-anime.component.scss']
 })
 export class SearchedAnimeScreenComponent implements OnInit {
   searchedAnimeList: AnimeInfo[] = [];
@@ -64,6 +65,6 @@ export class SearchedAnimeScreenComponent implements OnInit {
   }
 
   onClickAnime(animeId: number) {
-    this.router.navigate(["anime-info-screen"], {queryParams: {id: animeId}});
+    this.router.navigate(["anime-info"], {queryParams: {id: animeId}});
   }
 }
