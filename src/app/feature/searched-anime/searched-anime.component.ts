@@ -35,7 +35,6 @@ export class SearchedAnimeScreenComponent implements OnInit {
 
   initSearchedAnimeList() {
     const searchedName = this.route.snapshot.queryParamMap.get("name");
-    console.log(searchedName);
     let animeList: AnimeInfo[] = [];
     this.animeInfoService.getSearchedAnime(searchedName!).subscribe({
       next: (data: any) => {

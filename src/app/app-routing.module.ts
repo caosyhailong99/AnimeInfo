@@ -9,9 +9,15 @@ import { MainLayoutComponent } from './shared/common/main-layout/main-layout.com
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'top-anime',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: MainLayoutComponent,
     children: [
       { path: 'top-anime', component: TopAnimeComponent },
+      { path: 'top-anime/:page', component: TopAnimeComponent },
       { path: 'anime-info', component: AnimeInfoScreenComponent },
       {
         path: 'searched-anime',

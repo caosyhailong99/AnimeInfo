@@ -47,8 +47,7 @@ export class MainLayoutComponent {
   }
 
   onPressedEnter() {
-    console.log('OK');
-    this.router.navigate(['/searched-anime-screen'], {
+    this.router.navigate(['/searched-anime'], {
       queryParams: { name: this.searchName.value },
     });
   }

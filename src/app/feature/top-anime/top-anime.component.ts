@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AnimeGenre } from 'src/app/core/models/AnimeGenre';
 import { AnimeImage } from 'src/app/core/models/AnimeImage';
@@ -16,11 +16,17 @@ export class TopAnimeComponent implements OnInit {
   topAnimeList: AnimeInfo[] = [];
   constructor(
     private animeService: AnimeInfoService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
     ) { }
 
   async ngOnInit() {
-    await this.getTopAnimeList();
+    let page = Number(this.route.snapshot.paramMap.get('page')); 
+    if (page)
+      await this.getTopAnimeByPage(page);
+    else
+      await this.getTopAnimeList();
+
   }
 
   async getTopAnimeList() {
@@ -38,7 +44,6 @@ export class TopAnimeComponent implements OnInit {
           }
           this.topAnimeList.push(new AnimeInfo(item.mal_id as number, item.title as string, animeImage, animeGenres));
         }
-        console.log(this.topAnimeList);
       },
       error(err) {
         console.log(`Oh boy, there's an error: ${err}`);
@@ -46,6 +51,12 @@ export class TopAnimeComponent implements OnInit {
       complete() {
         console.log("My job has done.");
       },
+    });
+  }
+
+  async getTopAnimeByPage(page: number) {
+    this.animeService.getTopAnimesByPage(page).subscribe((data: any) => {
+      console.log("Got data!");
     });
   }
 

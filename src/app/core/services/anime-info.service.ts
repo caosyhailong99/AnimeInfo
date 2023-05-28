@@ -13,6 +13,14 @@ export class AnimeInfoService {
     return this.http.get(API_URL + GET_TOP_ANIME_URL);
   }
 
+  getTopAnimesByPage(page: number) {
+    let pageParams: HttpParams = new HttpParams();
+    pageParams.set('page', page);
+    return this.http.get(API_URL + GET_TOP_ANIME_URL, {
+      params: pageParams,
+    });
+  }
+
   getAnimeById(id: string) {
     return this.http.get(API_URL + GET_ANIME_URL + `/${id}`);
   }
